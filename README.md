@@ -9,8 +9,7 @@
 #### Important Links
 
 * **[JDK](https://www.oracle.com/java/technologies/downloads/)**
-* **[Eclipse](https://www.eclipse.org/downloads/)**
-* **[Eclipse Installer Steps](https://www.eclipse.org/downloads/packages/installer)**
+* **[Eclipse Packager](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2022-12/R/eclipse-jee-2022-12-R-win32-x86_64.zip)**
 * **[MySql](https://dev.mysql.com/downloads/installer/)**
 * **[Tomcat Server](https://tomcat.apache.org/download-90.cgi)**
 * **[Core Java Interview Question & Answer](https://javainbeats.com/#/java-interview-questions)**
