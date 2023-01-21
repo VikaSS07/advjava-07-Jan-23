@@ -15,6 +15,7 @@ public class DbConenction {
 		
 			PreparedStatement stmt = 
 					con.prepareStatement("create table product(id int, name varchar(40), price double, quantity int)");
+			
 			int count = stmt.executeUpdate();
 			
 			con.close();
