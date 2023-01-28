@@ -20,7 +20,6 @@ public class SaveInquery extends HttpServlet {
 		String contact = request.getParameter("contact");
 		String city = request.getParameter("city");
 		String inq = request.getParameter("inq");
-		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/advjava07jan","root","root");
@@ -35,12 +34,8 @@ public class SaveInquery extends HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 		RequestDispatcher dis = request.getRequestDispatcher("Result.jsp");
-		dis.forward(request, response);
-		
-		
-		
+		dis.forward(request, response);		
 	}
 
 
