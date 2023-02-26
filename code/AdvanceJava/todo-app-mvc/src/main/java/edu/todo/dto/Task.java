@@ -1,8 +1,5 @@
 package edu.todo.dto;
-
-import java.time.LocalDate;
 import java.util.Date;
-
 public class Task {
 	private int id;
 	private String title;

@@ -7,12 +7,9 @@
 <title>Add New Task</title>
 </head>
 <body>
-
 <%@ include file="menu.jsp" %>
-
 <div align="center">
 <h1>Create new Task</h1>
-
 <%
 	String code = request.getParameter("c");
 	String color="";
@@ -30,9 +27,7 @@
 		}
 	}
 %>
-
 	<h3 style="color: <%=color%>"> <%=msg%></h3>
-
 	<form action="create-my-task">
 		Task Title: <input name="title">
 		<br><br>
@@ -47,8 +42,6 @@
 		<button type="submit">Create Task</button>
 	</form>
 </div>
-
-
 </body>
 </html>
 

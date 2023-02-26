@@ -1,3 +1,31 @@
+<!-- <h1>
+<a class="nav-link" href="home.jsp">Home</a> |
+<a class="nav-link" href="create-task.jsp">New Task</a> |
+<a class="nav-link" href="show-my-task">View Task</a> |
+<a class="nav-link" href="#">Search Task</a>|
+</h1>
+<hr> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -9,13 +37,13 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	<!-- Brand/logo -->
+	Brand/logo
 	<a class="navbar-brand" href="#">ToDo App</a>
-	<!-- Links -->
+	Links
 	<ul class="navbar-nav">
 		<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
 		<li class="nav-item"><a class="nav-link" href="create-task.jsp">New Task</a></li>
-		<li class="nav-item"><a class="nav-link" href="#">View Task</a></li>
+		<li class="nav-item"><a class="nav-link" href="show-my-task">View Task</a></li>
 		<li class="nav-item"><a class="nav-link" href="#">Search Task</a></li>
 	</ul>
 </nav>
