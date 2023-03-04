@@ -30,7 +30,10 @@
 				<td><%=t.getStatus()%> </td>
 				<td><%=t.getScheduledOn()%> </td>
 				<td><%=t.getUpdatedOn()%> </td>
-				<td> Edit / Delete </td>
+				<td> 
+				<a href='get-task-for-edit?id=<%=t.getId()%>'>Edit</a>/
+				<a href='#?id=<%=t.getId()%>'>Delete</a>
+				<td>
 			</tr>	
 		<%		
 			}

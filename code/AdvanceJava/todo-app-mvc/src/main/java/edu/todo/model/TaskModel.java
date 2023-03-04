@@ -54,4 +54,59 @@ public class TaskModel {
 		}
 		return list;
 	}
+	
+	public Task getTaskById(int id) {
+		Task task = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/advjava07jan","root","root");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM task where id = ?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();	
+			if(rs.next()) {
+				task = new Task();
+				task.setId(rs.getInt("id"));
+				task.setTitle(rs.getString("title"));
+				task.setStatus(rs.getString("status"));
+				task.setScheduledOn(rs.getDate("scheduledOn"));
+				task.setUpdatedOn(rs.getDate("updatedOn"));
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return task;
+	}
+	
+	public boolean updateTaskById(Task task) {
+		boolean result = false;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/advjava07jan","root","root");
+			PreparedStatement stmt = con.prepareStatement("UPDATE task SET title=?, status=?, scheduledOn=?,  updatedOn=now() WHERE id=?");
+				stmt.setString(1, task.getTitle());
+				stmt.setString(2, task.getStatus());
+				stmt.setDate(3, new java.sql.Date(task.getScheduledOn().getTime()));
+				stmt.setInt(4, task.getId());
+			int count = stmt.executeUpdate();
+			result = count>0;
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

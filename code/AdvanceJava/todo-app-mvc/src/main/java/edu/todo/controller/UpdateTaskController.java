@@ -1,10 +1,8 @@
 package edu.todo.controller;
 
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -16,36 +14,30 @@ import javax.servlet.http.HttpServletResponse;
 import edu.todo.dto.Task;
 import edu.todo.model.TaskModel;
 
-@WebServlet("/create-my-task")
-public class CreateTask extends HttpServlet {
+@WebServlet("/update-my-task")
+public class UpdateTaskController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("CreateTask Controller Execution");
-		
-		//1. Get the data from the request
+		String id = request.getParameter("id");
 		String title = request.getParameter("title");
 		String status = request.getParameter("status");
-		String scheduledOn = request.getParameter("scheduledOn");
+		String schedule = request.getParameter("scheduledOn");
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
 		Date date=null;
 		try {
-			date = format.parse(scheduledOn);
+			date = format.parse(schedule);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		// set the data into DTO
 		Task task = new Task();
+		task.setId(Integer.parseInt(id));
 		task.setTitle(title);
 		task.setStatus(status);
 		task.setScheduledOn(date);
-		// pass the data into Model class in form of DTO
+		
 		TaskModel model = new TaskModel();
-		boolean result = model.save(task);
-		String code = result ? "200" : "500";
-		// redirect to a page (reponse)
-		response.sendRedirect("create-task.jsp?c="+code);
+		model.updateTaskById(task);
+		
+		response.sendRedirect("show-my-task");
 	}
+
 }
-
-
-
-
