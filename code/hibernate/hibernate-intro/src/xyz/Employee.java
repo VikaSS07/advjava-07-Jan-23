@@ -1,12 +1,21 @@
+package xyz;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "emp123")
 public class Employee {
 	@Id
+	@Column(name = "empid")
 	private int id;
+	@Column(length = 30, nullable = false)
 	private String name;
+	@Column(unique = true)
 	private String email;
+	@Column(length = 10, name = "phoneno", unique = true, nullable = false)
 	private String contact;
 	public int getId() {
 		return id;
