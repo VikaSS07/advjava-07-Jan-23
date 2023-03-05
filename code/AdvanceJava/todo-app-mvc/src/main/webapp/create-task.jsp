@@ -12,6 +12,9 @@
 <div align="center">
 <h1>Create new Task</h1>
 <%
+	String title = request.getParameter("title");
+	String scheduled = request.getParameter("scheduledOn"); 
+
 	String code = request.getParameter("c");
 	String color="";
 	String msg="";
@@ -42,7 +45,7 @@
 
 	<h3 style="color: <%=color%>"> <%=msg%></h3>
 	<form action="create-my-task">
-		Task Title<sup style="color: red">*</sup> : <input name="title">
+		Task Title<sup style="color: red">*</sup> : <input name="title" value="<%=title==null?"":title %>">
 		<br><br>
 		Task Status<sup style="color: red">*</sup>: <select name="status">
 						<option value="open">Open</option>
@@ -50,7 +53,7 @@
 						<option value="close">close</option>
 					</select>
 		<br><br>
-		Schedule On<sup style="color: red">*</sup>: <input type="date" name="scheduledOn">
+		Schedule On<sup style="color: red">*</sup>: <input type="date" name="scheduledOn" value="<%=scheduled==null?"":scheduled%>">
 		<br><br>
 		<button type="submit">Create Task</button>
 	</form>
